@@ -24,6 +24,3 @@ CIFAR-10 test accuracy — SVM: **39.4%**, Softmax: **41.2%**, two-layer network
   - `a2_helpers.py`: Toy-data generation and training-curve / weight visualization.
   - `a2_challenge_problem.py`: Scaffolding for the optional challenge problem.
   - `submit.py`: Submission packaging tooling.
-
-## Acknowledgment
-Scaffolding and the `eecs598` package are based on the University of Michigan's EECS 498/598 *Deep Learning for Computer Vision* course.
