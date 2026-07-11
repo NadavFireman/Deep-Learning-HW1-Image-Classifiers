@@ -11,13 +11,19 @@
 CIFAR-10 test accuracy — SVM: **39.4%**, Softmax: **41.2%**, two-layer network: **56.7%**.
 
 ## Repository Structure
-- `linear_classifier.ipynb` / `.py`: SVM & Softmax — notebook and implementation.
-- `two_layer_net.ipynb` / `.py`: Two-layer network — notebook and implementation.
-- `eecs598/`: Course helper package (CIFAR-10 loading, gradient and visualization utilities).
+- `linear_classifier.ipynb`: Walkthrough notebook — SVM & Softmax, gradient checks, hyperparameter search and results.
+- `linear_classifier.py`: Implementation of the SVM and Softmax losses, training loop and search functions.
+- `two_layer_net.ipynb`: Walkthrough notebook — the two-layer network, from toy data to CIFAR-10.
+- `two_layer_net.py`: Implementation of the network's forward/backward pass, training, prediction and tuning.
 - `Ex 1.pdf`: Original assignment instructions.
+- `eecs598/` — Course helper package:
+  - `__init__.py`: Package initialization and seed utilities.
+  - `data.py`: CIFAR-10 downloading, loading and preprocessing.
+  - `grad.py`: Numeric gradient checking (finite differences, relative error).
+  - `utils.py`: General assignment utilities.
+  - `a2_helpers.py`: Toy-data generation and training-curve / weight visualization.
+  - `a2_challenge_problem.py`: Scaffolding for the optional challenge problem.
+  - `submit.py`: Submission packaging tooling.
 
 ## Acknowledgment
 Scaffolding and the `eecs598` package are based on the University of Michigan's EECS 498/598 *Deep Learning for Computer Vision* course.
-
----
-*Course: Deep Learning, M.Sc. Data Science, HIT · Python, PyTorch*
