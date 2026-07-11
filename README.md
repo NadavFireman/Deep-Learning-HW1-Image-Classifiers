@@ -1,30 +1,27 @@
 # Deep Learning - Image Classifiers (HW1)
-**Home Assignment 1 (M.Sc. Data Science, HIT). Implementing three image classifiers from scratch in PyTorch — a multiclass SVM, a Softmax classifier, and a two-layer neural network — trained on CIFAR-10, with fully vectorized gradient code verified against numeric gradient checking.**
+
+**Home Assignment 1 (M.Sc. Data Science, HIT). Three image classifiers built from scratch in PyTorch — multiclass SVM, Softmax, and a two-layer neural network — trained on CIFAR-10, with every analytic gradient verified by numeric gradient checking.**
 
 ## Overview
-This assignment builds three classifiers from the ground up to compare their behavior and tradeoffs on the CIFAR-10 image-classification task. The emphasis is on implementing each loss function and its analytic gradient in vectorized form (rather than relying on autograd), validating correctness with numeric gradient checks, and tuning each model through a hyperparameter search on a held-out validation set.
+Each loss function and its gradient is implemented in both naive (loop-based) and fully vectorized form — no autograd — validated with centered finite-difference checks, and tuned through a hyperparameter search on a held-out validation split.
 
 ## Key Features
-- **Multiclass SVM Classifier:** Hinge-loss implemented in both naive (loop-based) and fully vectorized form, with analytic gradients.
-- **Softmax Classifier:** Cross-entropy loss with a numerically stable softmax, in both naive and vectorized versions.
-- **Two-Layer Neural Network:** A fully connected network with a ReLU hidden layer — forward pass, manual backpropagation, SGD training, prediction, and hyperparameter tuning.
-- **Vectorized Gradients + Gradient Checking:** Every analytic gradient is verified against a centered finite-difference numeric approximation.
-- **Hyperparameter Search:** Learning-rate and regularization tuning for each model, selecting the best configuration on the validation split.
-- **Challenge Problem:** A hand-drawn-weights experiment — manually designing network weights, mapping a colormap image back to weight values, and running a manual forward pass to classify MNIST digits.
+- **Multiclass SVM:** Hinge loss with analytic gradients, naive and vectorized.
+- **Softmax Classifier:** Numerically stable cross-entropy, naive and vectorized.
+- **Two-Layer Neural Network:** ReLU hidden layer — forward pass, manual backpropagation, SGD training, prediction and tuning.
+- **Gradient Checking & Hyperparameter Search:** Every gradient verified against finite differences; learning rate and regularization tuned per model on the validation set.
 
-## Tech Stack
-- **Language:** Python
-- **Framework:** PyTorch (tensors and training; core gradients implemented manually)
-- **Dataset:** CIFAR-10 (with MNIST used in the challenge problem)
-- **Environment:** Google Colab
+## Results
+CIFAR-10 test accuracy — SVM: **39.4%**, Softmax: **41.2%**, two-layer network: **56.7%** (validation bests: 39.7% / 41.0% / 57.4%).
 
 ## Repository Structure
-- `linear_classifier.ipynb`: Walkthrough notebook for the SVM and Softmax classifiers, with results at each required cell.
-- `linear_classifier.py`: Implementation of the SVM and Softmax losses, training loop, and hyperparameter search.
-- `two_layer_net.ipynb`: Walkthrough notebook for the two-layer neural network, with results.
-- `two_layer_net.py`: Implementation of the network's forward/backward pass, training, prediction, and tuning.
-- `eecs598/`: Course helper package — CIFAR-10 loading and preprocessing (`data.py`), gradient utilities (`grad.py`), visualization and assignment helpers (`utils.py`, `a2_helpers.py`), the challenge problem (`a2_challenge_problem.py`), and submission tooling (`submit.py`).
-- `Ex 1.pdf`: Original assignment instructions and requirements.
+- `linear_classifier.ipynb` / `linear_classifier.py`: SVM & Softmax — walkthrough notebook and implementation.
+- `two_layer_net.ipynb` / `two_layer_net.py`: Two-layer network — walkthrough notebook and implementation.
+- `eecs598/`: Course helper package — CIFAR-10 loading, gradient utilities, visualization and submission tooling.
+- `Ex 1.pdf`: Original assignment instructions.
 
 ## Acknowledgment
-The assignment scaffolding and helper package (`eecs598`) are based on the course materials from the University of Michigan's EECS 498/598 *Deep Learning for Computer Vision* course.
+Assignment scaffolding and the `eecs598` helper package are based on the University of Michigan's EECS 498/598 *Deep Learning for Computer Vision* course materials.
+
+---
+*Course: Deep Learning, M.Sc. Data Science, HIT · Python, PyTorch*
