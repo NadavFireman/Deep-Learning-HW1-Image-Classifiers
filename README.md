@@ -1,6 +1,6 @@
 # Deep Learning - Image Classifiers (HW1)
 
-**Home Assignment 1 (M.Sc. Data Science, HIT). Three image classifiers built from scratch in PyTorch on CIFAR-10 — every loss and analytic gradient implemented in naive and fully vectorized form (no autograd) and verified by numeric gradient checking.**
+**Home Assignment 1 (Grade 95, M.Sc. Data Science, HIT). Three image classifiers built from scratch in PyTorch on CIFAR-10 — every loss and analytic gradient implemented in naive and fully vectorized form (no autograd) and verified by numeric gradient checking.**
 
 ## Key Features
 - **Multiclass SVM:** Hinge loss with analytic gradients.
